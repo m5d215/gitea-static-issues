@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "devDependencies": {
+    "markdown-styles": "^3.1.10",
+    "mustache": "^3.0.1"
+  }
+}
