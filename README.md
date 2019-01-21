@@ -28,3 +28,21 @@ export REPO=m5d215/gitea-static-issues
 make download
 make build
 ```
+
+Run on docker.
+
+```sh
+docker container run \
+    --rm \
+    -v "$PWD/static:/static" \
+    -e GITEA_URL=https://try.gitea.io \
+    -e REPO=m5d215/gitea-static-issues \
+    m5d215/gitea-static-issues:latest download
+
+docker container run \
+    --rm \
+    -v "$PWD/static:/static" \
+    -e GITEA_URL=https://try.gitea.io \
+    -e REPO=m5d215/gitea-static-issues \
+    m5d215/gitea-static-issues:latest build
+```

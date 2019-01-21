@@ -1,0 +1,10 @@
+.git
+node_modules
+static
+
+.dockerignore
+.editorconfig
+.gitignore
+Dockerfile
+README.md
+screenshot.png
