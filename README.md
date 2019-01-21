@@ -1,5 +1,7 @@
 # gitea-static-issues
 
+![size and layers](https://images.microbadger.com/badges/image/m5d215/gitea-static-issues.svg)
+
 Export [Gitea](https://gitea.io) issues in json/md/html format.
 
 ![screenshot](screenshot.png)
