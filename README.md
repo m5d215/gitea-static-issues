@@ -4,7 +4,7 @@
 
 Export [Gitea](https://gitea.io) issues in json/md/html format.
 
-![screenshot](screenshot.png)
+![screenshot](https://github.com/m5d215/gitea-static-issues/raw/master/screenshot.png)
 
 ## Features
 
