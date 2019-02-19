@@ -39,15 +39,24 @@ function download_issues()
 function save_issue()
 {
     local _id
+    local _comments
     local _json
 
     {
         read -r _id
+        read -r _comments
         read -r _json
-    } < <(jq -cMr '[.number, .][]')
+    } < <(jq -cMr '[.number, .comments, .][]')
 
-    __log "#$_id"
-    jq -M . <<<"$_json" >"static/json/$_id.json"
+    __log "#$_id ($_comments comments)"
+    {
+        echo "$_json"
+        if (( _comments != 0 )); then
+            curl -ns "$GITEA_URL/api/v1/repos/$REPO/issues/$_id/comments"
+        else
+            echo '[]'
+        fi
+    } | jq -Ms '.[0] + { comments: .[1] }' >"static/json/$_id.json"
 }
 
 # stdin: Issue   -- issue in JSON format
